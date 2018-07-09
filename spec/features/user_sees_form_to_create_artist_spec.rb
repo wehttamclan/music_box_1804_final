@@ -4,9 +4,9 @@ describe 'user can create artist' do
   it 'by filling in a form' do
     artist_name = "Journey"
 
-    visit "/artists/new"
+    visit new_artist_path
 
-    fill_in "artist[name]", with: artist_name
+    fill_in :artist_name, with: artist_name
 
     click_on "Create Artist"
 

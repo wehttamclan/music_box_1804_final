@@ -9,10 +9,11 @@ class ArtistsController < ApplicationController
   end
 
   def create
-    if Artist.create(artist_params)
+    @artist = Artist.create(artist_params)
+    if @artist.save
       redirect_to '/artists'
     else
-      redirect_to '/artists/new'
+      render :new
     end
   end
 
