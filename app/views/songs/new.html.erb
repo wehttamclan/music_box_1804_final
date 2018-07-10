@@ -1,11 +1,9 @@
-<%= form_for @song do |f| %>
+<%= form_for [@artist, @song] do |f| %>
   <%=f.label :title%>
   <%=f.text_field :title%>
   <%=f.label :length%>
   <%=f.text_field :length%>
   <%=f.label :play_count%>
   <%=f.text_field :play_count%>
-  <%=f.label :artist_name%>
-  <%=f.collection_select(:artist_id, Artist.all, :id, :name)%>
   <%=f.submit%>
 <%end%>
