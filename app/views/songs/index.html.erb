@@ -3,4 +3,5 @@
 <% @songs.each do |song| %>
   <h2><%=song.title %></h2>
   <p>Plays: <%=song.play_count%></p>
+  <p><%= button_to 'Add Song', carts_path(song_id: song.id), class: 'btn btn-danger' %></p>
 <%end%>
