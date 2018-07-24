@@ -4,6 +4,11 @@ class SongsController < ApplicationController
     @songs = Song.all
   end
 
+  def show
+    binding.pry
+    @song = Song.find_by(slug: params[:id])
+  end
+
   def new
     @artist = Artist.find(params[:artist_id])
     @song = Song.new

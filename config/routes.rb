@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :artists, shallow: true do
     resources :songs, except: [:index]
   end
-  resources :songs, only: [:index]
+  resources :songs, only: [:index, :show]
   resources :playlists
 
   resources :users, only: [:new, :create, :show]
