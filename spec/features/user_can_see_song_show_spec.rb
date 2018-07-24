@@ -6,7 +6,7 @@ describe 'user sees one song' do
     song_1 = artist.songs.create(title: "Don't Stop Believing", length: 320, play_count: 390808)
     song_2 = artist.songs.create(title: "Anyway You Want It", length: 420, play_count: 67908)
 
-    visit song_path(song_1.slug)
+    visit song_path(song_1)
 
     expect(current_path).to eq("/songs/#{song_1.slug}")
 

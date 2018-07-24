@@ -5,8 +5,7 @@ class SongsController < ApplicationController
   end
 
   def show
-    binding.pry
-    @song = Song.find_by(slug: params[:id])
+    @song = Song.find_by(slug: params[:slug])
   end
 
   def new
