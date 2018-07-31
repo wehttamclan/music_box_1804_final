@@ -10,5 +10,16 @@ describe 'a visitor visits genre index page' do
     expect(current_path).to eq(genres_path)
     expect(page).to have_content(genre_1.name)
     expect(page).to have_content(genre_2.name)
+
+    click_on genre_1.name
+
+    expect(current_path).to eq(genre_path(genre_1))
   end
+  it "doesn't see new genre form" do
+    visit genres_path
+
+    expect(page).to_not have_field("name")
+  end
+
+
 end

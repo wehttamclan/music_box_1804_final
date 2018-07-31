@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'user visits genre index page' do
-  it "sees a form to create new genre" do
+  xit "sees a form to create new genre" do
     admin = User.create(username: 'matt', password: 'asdf', role: 1)
     genre_1 = Genre.create(name:'Rock')
     genre_2 = Genre.create(name:'Folk')
@@ -16,7 +16,7 @@ describe 'user visits genre index page' do
     fill_in :genre_name, with: 'Classical'
     click_on 'Create Genre'
 
-    
+    expect(current_path).to eq(genres_path)
+    expect(page).to have_content('Classical')
   end
-
 end
