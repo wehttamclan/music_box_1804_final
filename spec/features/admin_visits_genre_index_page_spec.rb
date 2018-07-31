@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'user visits genre index page' do
-  xit "sees a form to create new genre" do
+  it "sees a form to create new genre" do
     admin = User.create(username: 'matt', password: 'asdf', role: 1)
     genre_1 = Genre.create(name:'Rock')
     genre_2 = Genre.create(name:'Folk')
