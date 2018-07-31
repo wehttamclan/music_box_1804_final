@@ -12,14 +12,16 @@ Rails.application.routes.draw do
   end
 
   resources :songs, only: [:index]
-  
+
   resources :playlists
 
   resources :users, only: [:new, :create, :show]
 
   namespace :admin do
     resources :categories, only: [:index]
+    resources :genres, only: [:new, :create]
   end
 
   resources :carts, only: [:create]
+  resources :genres, only: [:index, :show]
 end
