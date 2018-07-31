@@ -23,10 +23,13 @@ describe 'a visitor visits genre show page' do
     song_1 = artist.songs.create(title: "Don't Stop Believing", length: 320, play_count: 390808, rating: 1)
     song_2 = artist.songs.create(title: "Anyway You Want It", length: 420, play_count: 67908, rating: 3)
     song_3 = artist.songs.create(title: "not a song", length: 123, play_count: 122, rating: 5)
+    song_4 = artist.songs.create(title: "not a song", length: 123, play_count: 122, rating: 4)
     genre_1 = Genre.create(name:'Rock')
+    genre_2 = Genre.create(name:'Classical')
     SongGenre.create(song_id: song_1.id, genre_id: genre_1.id)
     SongGenre.create(song_id: song_2.id, genre_id: genre_1.id)
     SongGenre.create(song_id: song_3.id, genre_id: genre_1.id)
+    SongGenre.create(song_id: song_4.id, genre_id: genre_2.id)
 
 
     visit genre_path(genre_1)

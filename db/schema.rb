@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20180731162315) do
     t.datetime "updated_at", null: false
     t.bigint "artist_id"
     t.string "slug"
-    t.integer "rating"
+    t.integer "rating", default: 0
     t.index ["artist_id"], name: "index_songs_on_artist_id"
   end
 

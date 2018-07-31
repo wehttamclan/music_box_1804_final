@@ -20,6 +20,4 @@ describe 'a visitor visits genre index page' do
 
     expect(page).to_not have_field("name")
   end
-
-
 end
