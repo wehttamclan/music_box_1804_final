@@ -3,5 +3,9 @@
 <% end %>
 
 <% if current_admin? %>
-  <%= render partial: 'admin/genres/form' %>
+  <%= form_for [:admin, @genre] do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.submit %>
+  <% end %>
 <% end %>
