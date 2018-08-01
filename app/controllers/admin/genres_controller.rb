@@ -5,7 +5,8 @@ class Admin::GenresController < Admin::BaseController
     if @genre.save
       redirect_to genres_path
     else
-      render :new
+      flash[:notice] = 'Genre not created. Try again.'
+      redirect_to genres_path
     end
   end
 
